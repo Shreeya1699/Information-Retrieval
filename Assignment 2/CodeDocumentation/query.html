@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module query</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>query</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Cpratd%5Cdocuments%5Cirprojectmedicine%5Cassign2%5Csubmission%5Ccode%5Cquery.py">c:\users\pratd\documents\irprojectmedicine\assign2\submission\code\query.py</a></font></td></tr></table>
+    <p><tt>query.py<br>
+Check&nbsp;new&nbsp;document&nbsp;for&nbsp;plagiarism</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="nltk.html">nltk</a><br>
+</td><td width="25%" valign=top><a href="textdistance.html">textdistance</a><br>
+</td><td width="25%" valign=top><a href="time.html">time</a><br>
+</td><td width="25%" valign=top><a href="utils.html">utils</a><br>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-check_dist"><strong>check_dist</strong></a>(filename, result)</dt><dd><tt>:param&nbsp;filename:&nbsp;(str)&nbsp;the&nbsp;path&nbsp;of&nbsp;query&nbsp;file<br>
+:param&nbsp;result:(list)&nbsp;list&nbsp;contains&nbsp;the&nbsp;documents&nbsp;from&nbsp;corpus&nbsp;with&nbsp;similarity&nbsp;to&nbsp;query&nbsp;file<br>
+:return:&nbsp;lists&nbsp;containing&nbsp;jaccard&nbsp;distances,&nbsp;hamming&nbsp;distances,&nbsp;edit&nbsp;distances&nbsp;and&nbsp;cosine&nbsp;distances&nbsp;with&nbsp;each&nbsp;document&nbsp;in&nbsp;the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result&nbsp;with&nbsp;that&nbsp;of&nbsp;the&nbsp;corpus</tt></dd></dl>
+ <dl><dt><a name="-check_new_lsh"><strong>check_new_lsh</strong></a>(filename)</dt><dd><tt>Read&nbsp;input&nbsp;file,&nbsp;calculate&nbsp;its&nbsp;LSH&nbsp;and&nbsp;query&nbsp;it&nbsp;in&nbsp;the&nbsp;LSH&nbsp;database<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;empty&nbsp;list&nbsp;[]&nbsp;-&nbsp;the&nbsp;file&nbsp;is&nbsp;not&nbsp;plagiarized&nbsp;(no&nbsp;LSH&nbsp;collision)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;list&nbsp;[source_filenames]&nbsp;-&nbsp;list&nbsp;with&nbsp;file&nbsp;names&nbsp;of&nbsp;sources&nbsp;of&nbsp;plagiarism</tt></dd></dl>
+</td></tr></table>
+</body></html>

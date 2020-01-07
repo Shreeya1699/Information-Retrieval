@@ -1,0 +1,138 @@
+NAME
+    lsh_main
+
+DESCRIPTION
+    lsh_main.py
+    calculates the LSH for all the documents in the corpus
+
+FUNCTIONS
+    init_lshs(directory, type, threshold)
+        Initilizes and calculates LSH for the document corpus
+        Args:
+            directory (str): the directory with source files
+            type (str): type of ngrams to use ('char', 'word')
+            threshold (float): Jaccard threshold value
+        Returns:
+            lsh: datasketch object
+
+    serialize(lsh_type, file)
+        Pickle lsh object
+
+FILE
+    c:\drive f\cms\semester\3.1\cs f469 ir\assignment2\lsh_main.py
+
+
+
+
+NAME
+    utils
+
+FUNCTIONS
+    load_lsh(filename)
+        Load pickled lsh object
+
+    read_file(filename)
+        Read the file
+        Returns:
+            filename (str): the name of the file read
+            text (str): text of the file as one string
+
+    tokenize_file(filename)
+        Read and tokenize the file
+        Returns:
+            Returns:
+            filename (str): the name of the file read
+            token_text (list): list of tokenized words of the text
+
+DATA
+    CHAR_03_FILE = 'lsh_char_03.pickle'
+    CHAR_05_FILE = 'lsh_char_05.pickle'
+    WORD_01_FILE = 'lsh_word_01.pickle'
+    WORD_03_FILE = 'lsh_word_03.pickle'
+    WORD_05_FILE = 'lsh_word_05.pickle'
+
+FILE
+    c:\drive f\cms\semester\3.1\cs f469 ir\assignment2\utils.py
+
+
+
+NAME
+    query
+
+DESCRIPTION
+    query.py
+    Check new document for plagiarism
+
+FUNCTIONS
+    check_dist(filename, result)
+        :param filename: (str) the path of query file
+        :param result:(list) list contains the documents from corpus with similarity to query file
+        :return: lists containing jaccard distances, hamming distances, edit distances and cosine distances with each document in the
+                    result with that of the corpus
+
+    check_new_lsh(filename)
+        Read input file, calculate its LSH
+        and query it in the LSH database
+        Returns:
+            empty list [] - the file is not plagiarized (no LSH collision)
+            list [source_filenames] - list with file names of sources of plagiarism
+
+DATA
+    lsh = <datasketch.lsh.MinHashLSH object>
+
+FILE
+    c:\drive f\cms\semester\3.1\cs f469 ir\assignment2\query.py
+
+
+
+NAME
+    evaluation
+
+DESCRIPTION
+    evaluation.py
+    this code calculates the precision and recall of the lsh algorithm implemented and stores it in a file called
+
+FUNCTIONS
+    calculate_lsh(text, mode, lsh_type)
+
+    calculate_metrics(tn_directory, tp_directory, mode, lsh_type)
+        Calculate the results of the LSH algorithms performance
+
+    evaluate_true_negatives(input_dir, mode, lsh_type)
+        Calculate LSHs for the files that do not contain plagiarism (tn_docs folder)
+        Arguments:
+            input_dir (str): directory to the files that do not contain plagiarism
+                            (true_positives folder)
+            mode (str): type of ngrams to use ('char', 'word')
+            lsh_type (MinHash object): previously calculated lsh
+        Returns:
+            tn: number of true negatives - files
+                correctly marked as not plagiarized
+            fp: number of false positives - files
+                incorrectly marked as plagiarized
+            writes names of the files to 'tn_log.txt'
+            writes names of the files to 'fp.txt'
+
+    evaluate_true_positives(input_dir, mode, lsh_type)
+        Calculate LSHs for the files that contain plagiarism (true_positives folder)
+        Args:
+            input_dir (str): directory to the files that contain plagiarism
+                            (true_positives folder)
+            mode (str): type of ngrams to use ('char', 'word')
+            lsh_type (MinHash object): previously calculated lsh
+        Returns:
+            true_pos: number of true positives - number of files
+                correctly marked as plagiarized
+            false_neg: number of false negatives - number of files
+                incorrectly marked as not plagiarized
+            writes names of the files to 'true_pos_log.txt'
+            writes names of the files to 'false_neg.txt'
+
+    read_file(in_file, mode)
+
+DATA
+    division = _Feature((2, 2, 0, 'alpha', 2), (3, 0, 0, 'alpha', 0), 8192...
+
+FILE
+    c:\drive f\cms\semester\3.1\cs f469 ir\assignment2\evaluation.py
+

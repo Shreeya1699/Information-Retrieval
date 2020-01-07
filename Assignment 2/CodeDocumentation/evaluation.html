@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module evaluation</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>evaluation</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Cpratd%5Cdocuments%5Cirprojectmedicine%5Cassign2%5Csubmission%5Ccode%5Cevaluation.py">c:\users\pratd\documents\irprojectmedicine\assign2\submission\code\evaluation.py</a></font></td></tr></table>
+    <p><tt>evaluation.py<br>
+this&nbsp;code&nbsp;calculates&nbsp;the&nbsp;precision&nbsp;and&nbsp;recall&nbsp;of&nbsp;the&nbsp;lsh&nbsp;algorithm&nbsp;implemented&nbsp;and&nbsp;stores&nbsp;it&nbsp;in&nbsp;a&nbsp;file&nbsp;called</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="os.html">os</a><br>
+</td><td width="25%" valign=top><a href="time.html">time</a><br>
+</td><td width="25%" valign=top><a href="utils.html">utils</a><br>
+</td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-calculate_lsh"><strong>calculate_lsh</strong></a>(text, mode, lsh_type)</dt><dd><tt>Calculate&nbsp;lsh&nbsp;for&nbsp;the&nbsp;file</tt></dd></dl>
+ <dl><dt><a name="-calculate_metrics"><strong>calculate_metrics</strong></a>(tn_directory, tp_directory, mode, lsh_type)</dt><dd><tt>Calculate&nbsp;the&nbsp;results&nbsp;of&nbsp;the&nbsp;LSH&nbsp;algorithms&nbsp;performance</tt></dd></dl>
+ <dl><dt><a name="-evaluate_true_negatives"><strong>evaluate_true_negatives</strong></a>(input_dir, mode, lsh_type)</dt><dd><tt>Calculate&nbsp;LSHs&nbsp;for&nbsp;the&nbsp;files&nbsp;that&nbsp;do&nbsp;not&nbsp;contain&nbsp;plagiarism&nbsp;(tn_docs&nbsp;folder)<br>
+Arguments:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;input_dir&nbsp;(str):&nbsp;directory&nbsp;to&nbsp;the&nbsp;files&nbsp;that&nbsp;do&nbsp;not&nbsp;contain&nbsp;plagiarism<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(true_positives&nbsp;folder)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;mode&nbsp;(str):&nbsp;type&nbsp;of&nbsp;ngrams&nbsp;to&nbsp;use&nbsp;('char',&nbsp;'word')<br>
+&nbsp;&nbsp;&nbsp;&nbsp;lsh_type&nbsp;(MinHash&nbsp;object):&nbsp;previously&nbsp;calculated&nbsp;lsh<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;tn:&nbsp;number&nbsp;of&nbsp;true&nbsp;negatives&nbsp;-&nbsp;files<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;correctly&nbsp;marked&nbsp;as&nbsp;not&nbsp;plagiarized<br>
+&nbsp;&nbsp;&nbsp;&nbsp;fp:&nbsp;number&nbsp;of&nbsp;false&nbsp;positives&nbsp;-&nbsp;files<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;incorrectly&nbsp;marked&nbsp;as&nbsp;plagiarized<br>
+&nbsp;&nbsp;&nbsp;&nbsp;writes&nbsp;names&nbsp;of&nbsp;the&nbsp;files&nbsp;to&nbsp;'tn_log.txt'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;writes&nbsp;names&nbsp;of&nbsp;the&nbsp;files&nbsp;to&nbsp;'fp.txt'</tt></dd></dl>
+ <dl><dt><a name="-evaluate_true_positives"><strong>evaluate_true_positives</strong></a>(input_dir, mode, lsh_type)</dt><dd><tt>Calculate&nbsp;LSHs&nbsp;for&nbsp;the&nbsp;files&nbsp;that&nbsp;contain&nbsp;plagiarism&nbsp;(true_positives&nbsp;folder)<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;input_dir&nbsp;(str):&nbsp;directory&nbsp;to&nbsp;the&nbsp;files&nbsp;that&nbsp;contain&nbsp;plagiarism<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(true_positives&nbsp;folder)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;mode&nbsp;(str):&nbsp;type&nbsp;of&nbsp;ngrams&nbsp;to&nbsp;use&nbsp;('char',&nbsp;'word')<br>
+&nbsp;&nbsp;&nbsp;&nbsp;lsh_type&nbsp;(MinHash&nbsp;object):&nbsp;previously&nbsp;calculated&nbsp;lsh<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;true_pos:&nbsp;number&nbsp;of&nbsp;true&nbsp;positives&nbsp;-&nbsp;number&nbsp;of&nbsp;files<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;correctly&nbsp;marked&nbsp;as&nbsp;plagiarized<br>
+&nbsp;&nbsp;&nbsp;&nbsp;false_neg:&nbsp;number&nbsp;of&nbsp;false&nbsp;negatives&nbsp;-&nbsp;number&nbsp;of&nbsp;files<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;incorrectly&nbsp;marked&nbsp;as&nbsp;not&nbsp;plagiarized<br>
+&nbsp;&nbsp;&nbsp;&nbsp;writes&nbsp;names&nbsp;of&nbsp;the&nbsp;files&nbsp;to&nbsp;'true_pos_log.txt'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;writes&nbsp;names&nbsp;of&nbsp;the&nbsp;files&nbsp;to&nbsp;'false_neg.txt'</tt></dd></dl>
+ <dl><dt><a name="-read_file"><strong>read_file</strong></a>(in_file, mode)</dt><dd><tt>Reads&nbsp;file&nbsp;from&nbsp;the&nbsp;directory</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>division</strong> = _Feature((2, 2, 0, 'alpha', 2), (3, 0, 0, 'alpha', 0), 8192)</td></tr></table>
+</body></html>
