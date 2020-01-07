@@ -1,0 +1,197 @@
+
+E:\SEMESTER\3.1\CS F469 IR\Assignment3>py -m pydoc recommender collaborative cur_1 svd_1
+########################
+Collaborative Filtering
+RMSE : 0.8415866539574305
+MAE : 0.656756870276191
+Execution Time : 18.65512442588806
+########################
+Collaborative Filtering with Baseline Approach
+RMSE : 0.8792696706813906
+MAE : 0.6832819991715989
+Execution Time : 19.551723957061768
+########################
+SVD with 100% retention:
+RMSE for SVD: 0.011385705026808059
+MAE: 3.5328357027018216
+Execution Time : 3.4088871479034424
+########################
+SVD with 90% retention:
+RMSE : 0.011399370975422835
+MAE : 3.5338641760467038
+Execution Time : 2.2968575954437256
+
+########################
+CUR With 100 retention
+RMSE : 0.06489508402207614
+MAE : 11.060455236120353
+Execution Time : 5.783535957336426
+########################
+CUR with 90% retention:
+RMSE: 0.011716245132293877
+MAE : 3.52986
+Execution Time:5.757641315460205
+
+################################################################################################################################
+Help on module recommender:
+
+NAME
+    recommender
+
+FUNCTIONS
+    find_similarity(X, Y)
+        # Similarity function
+
+DATA
+    A = array([[ 0.        ,  0.        ,  0.        , ....  0.        ,
+     ...
+    B = array([[0., 0., 0., ..., 0., 0., 0.],
+           [0...., 0., 0.],
+        ...
+    a = 12
+    b = 203
+    count = 100000
+    count_thousand_data_points = 120
+    counter = 75001
+    data_file = <_io.TextIOWrapper name='movies.data' mode='r' encoding='c...
+    f = <_io.TextIOWrapper name='movies.data' mode='r' encoding='cp1252'>
+    i = 943
+    j = 1682
+    k = 50
+    line = '12\t203\t3\t879959583\n'
+    line_values = ['12', '203', '3', '879959583\n']
+    max_movie_no = 1682
+    max_user_no = 943
+    movie_count = 0
+    movie_ids_index = {}
+    movies_rated_by_user = {1: [61, 189, 33, 160, 20, 202, 171, 265, 155, ...
+    no_of_movies_rated_by_current_user = 31
+    no_of_neighbors = 5
+    num = -0.25486484882085825
+    r = 300
+    start_time = 1574585073.4269755
+    temp = array([[ 0.        ,  0.        ,  0.        , ....  0.        ...
+    temper = array([[0., 0., 0., ..., 0., 0., 0.],
+           [0...., 0., 0.],...
+    three_fourth_data_length = 75000
+    to_be_predicted = [[492, 840], [282, 406], [847, 221], [98, 757], [246...
+    tokens = ['12', '203', '3', '879959583\n']
+    user_count = 0
+    user_ids_index = {}
+    user_offset = array([ 0.00000000e+00,  5.45802194e-02,  9.6943....4426...
+
+FILE
+    e:\semester\3.1\cs f469 ir\assignment3\recommender.py
+
+#########################################################################################################################
+Help on module collaborative:
+
+NAME
+    collaborative
+
+FUNCTIONS
+    collaborative_filtering_func(AT, BT, no_of_neighbors, movies_rated_by_user, to_be_predicted, temp, baseline_approach)
+
+FILE
+    e:\semester\3.1\cs f469 ir\assignment3\collaborative.py
+
+############################################################################################################################
+
+Help on module cur_1:
+
+NAME
+    cur_1
+
+FUNCTIONS
+    cur_func(B, r)
+        # CUR function
+
+    find_U_and_rmse(B, r, row_indices, R, column_indices, C)
+
+    find_Unew_and_rmse(B, r, row_indices, R, column_indices, C)
+
+    get_new_sigma(sigma, X, YT, eigen_values)
+
+    select_random_rows(B, r, isRepeatationAllowed)
+        # Function to select random rows for CUR
+
+FILE
+    e:\semester\3.1\cs f469 ir\assignment3\cur_1.py
+
+###############################################################################################################################3
+
+Help on module svd_1:
+
+NAME
+    svd_1
+
+FUNCTIONS
+    get_new_VT(VT, eigen_values)
+
+    predict(A, B, VT, user_offset, temp)
+        # Predict function for SVD
+
+    svd_func(A, B, user_offset, temp)
+        # SVD function
+
+FILE
+    e:\semester\3.1\cs f469 ir\assignment3\svd_1.py
+
+###############################################################################################################################
+Help on module latent:
+
+NAME
+    latent
+
+CLASSES
+    builtins.object
+        MF
+
+    class MF(builtins.object)
+     |  MF(R, K, alpha, beta, iterations)
+     |
+     |  Methods defined here:
+     |
+     |  __init__(self, R, K, alpha, beta, iterations)
+     |      Perform matrix factorization to predict empty
+     |      entries in a matrix.
+     |
+     |      Arguments
+     |      - R (ndarray)   : user-item rating matrix
+     |      - K (int)       : number of latent dimensions
+     |      - alpha (float) : learning rate
+     |      - beta (float)  : regularization parameter
+     |
+     |  full_matrix(self)
+     |      Computer the full matrix using the resultant biases, P and Q
+     |
+     |  get_rating(self, i, j)
+     |      Get the predicted rating of user i and item j
+     |
+     |  mae(self)
+     |      A function to compute the total mean square error
+     |
+     |  rmse(self)
+     |      A function to compute the total mean square error
+     |
+     |  sgd(self)
+     |      Perform stochastic graident descent
+     |
+     |  train(self)
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables (if defined)
+     |
+     |  __weakref__
+     |      list of weak references to the object (if defined)
+
+FUNCTIONS
+    make_ratings_matrix()
+
+FILE
+    e:\semester\3.1\cs f469 ir\assignment3\latent.py
+
+########################################################################################################################
